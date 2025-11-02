@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGPA Calculator</title>
+  </head>
+  <body>
+    <div id="root"></div>
+ <div class="container">
+    <h1>CGPA Calculator</h1>
+    <input type="number" id="gpa1" placeholder="Enter GPA for Semester 1" />
+    <input type="number" id="gpa2" placeholder="Enter GPA for Semester 2" />
+    <input type="number" id="gpa3" placeholder="Enter GPA for Semester 3" />
+    <button onclick="calculateCGPA()">Calculate</button>
+    <h2 id="result"></h2>
+
+    <script type="module" src="/src/App.jsx"></script>
+<script src="script.js"></script>
+
+  </body>
+</html>
