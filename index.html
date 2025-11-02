@@ -1,22 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CGPA Calculator</title>
-  </head>
-  <body>
-    <div id="root"></div>
- <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CGPA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
     <h1>CGPA Calculator</h1>
-    <input type="number" id="gpa1" placeholder="Enter GPA for Semester 1" />
-    <input type="number" id="gpa2" placeholder="Enter GPA for Semester 2" />
-    <input type="number" id="gpa3" placeholder="Enter GPA for Semester 3" />
-    <button onclick="calculateCGPA()">Calculate</button>
-    <h2 id="result"></h2>
+  </header>
 
-    <script type="module" src="/src/App.jsx"></script>
-<script src="script.js"></script>
+  <main>
+    <table id="courseTable">
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>Credit Hours</th>
+          <th>Grade</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="courseBody">
+        <tr>
+          <td><input type="text" placeholder="Course Name" class="course-name"></td>
+          <td><input type="number" placeholder="Credit Hours" class="credit-hours" min="1"></td>
+          <td>
+            <select class="grade">
+              <option value="">Select</option>
+              <option value="A+">A+</option>
+              <option value="A">A</option>
+              <option value="B+">B+</option>
+              <option value="B">B</option>
+              <option value="C+">C+</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="F">F</option>
+            </select>
+          </td>
+          <td><button class="remove-btn">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
 
-  </body>
+    <div class="buttons">
+      <button id="addCourse">Add Course</button>
+      <button id="calculateCGPA">Calculate CGPA</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <section id="result" class="hidden">
+      <h2>Result</h2>
+      <p>Total Credit Hours: <span id="totalCredits">0</span></p>
+      <p>Total Grade Points: <span id="totalPoints">0</span></p>
+      <p>Final CGPA: <span id="finalCGPA">0.00</span></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>
